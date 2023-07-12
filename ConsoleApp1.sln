@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{1D8EB79F-34EB-42B8-B90A-A498F76D7875}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelightfulRecipes", "DelightfulRecipes\DelightfulRecipes.csproj", "{43827671-564A-499F-9BA6-E02196C52968}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelightfulRecipes", "DelightfulRecipes\DelightfulRecipes.csproj", "{051B3DAC-45A1-4B36-B8C2-171BFCF77621}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{1D8EB79F-34EB-42B8-B90A-A498F76D7875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D8EB79F-34EB-42B8-B90A-A498F76D7875}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D8EB79F-34EB-42B8-B90A-A498F76D7875}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43827671-564A-499F-9BA6-E02196C52968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43827671-564A-499F-9BA6-E02196C52968}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43827671-564A-499F-9BA6-E02196C52968}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43827671-564A-499F-9BA6-E02196C52968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051B3DAC-45A1-4B36-B8C2-171BFCF77621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051B3DAC-45A1-4B36-B8C2-171BFCF77621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051B3DAC-45A1-4B36-B8C2-171BFCF77621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051B3DAC-45A1-4B36-B8C2-171BFCF77621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
