@@ -1,4 +1,4 @@
-namespace DelightfulRecipes.Models
+namespace RecepieDelight.Models
 {
     public class ErrorViewModel
     {

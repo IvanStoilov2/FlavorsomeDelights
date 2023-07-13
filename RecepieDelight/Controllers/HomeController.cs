@@ -1,8 +1,8 @@
-﻿using DelightfulRecipes.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using RecepieDelight.Models;
 using System.Diagnostics;
 
-namespace DelightfulRecipes.Controllers
+namespace RecepieDelight.Controllers
 {
     public class HomeController : Controller
     {

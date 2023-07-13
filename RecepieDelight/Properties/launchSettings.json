@@ -3,16 +3,16 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:21619",
-      "sslPort": 44312
+      "applicationUrl": "http://localhost:23198",
+      "sslPort": 0
     }
   },
   "profiles": {
-    "DelightfulRecipes": {
+    "RecepieDelight": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5057",
+      "applicationUrl": "http://localhost:5198",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
