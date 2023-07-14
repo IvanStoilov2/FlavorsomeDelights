@@ -58,6 +58,13 @@ namespace RecepieDelight.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Description")] Recepie recepie)
         {
+            recepie.Ingredients = new List<Ingredient>();
+            var ingr = new Ingredient();
+            ingr.Name = "ngr2";
+            ingr.Filter = "asd";
+            recepie.Ingredients.Add(ingr);
+
+
             if (ModelState.IsValid)
             {
                 _context.Add(recepie);
