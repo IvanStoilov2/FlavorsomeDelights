@@ -30,7 +30,3 @@ body {
 .inf-page {
     text-decoration: none;
 }
-
-.inf-page:visited{
-     background-color: red;
-}
