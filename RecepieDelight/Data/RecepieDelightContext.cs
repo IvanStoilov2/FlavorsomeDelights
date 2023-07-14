@@ -13,6 +13,8 @@ namespace RecepieDelight.Data
 
         public DbSet<RecepieDelight.Models.Ingredient> Ingredients { get; set; } = default!;
 
+        public DbSet<RecepieDelight.Models.Shopping_List> shopping_Lists { get; set; } = default!;
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Recepie>()
