@@ -27,6 +27,15 @@ namespace RecepieDelight.Controllers
                           Problem("Entity set 'RecepieDelightContext.Recepie'  is null.");
         }
 
+
+        // GET: Recepies/Details/5
+        public async Task<IActionResult> GetByTitle(string titleFilter)
+        {
+            return _context.Recepie.Where(x=>x.Title.Contains(titleFilter)) != null ?
+                          View("Index",await _context.Recepie.Where(x => x.Title.Contains(titleFilter)).ToListAsync()) :
+                          Problem("Entity set 'RecepieDelightContext.Recepie'  is null.");
+        }
+
         // GET: Recepies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
