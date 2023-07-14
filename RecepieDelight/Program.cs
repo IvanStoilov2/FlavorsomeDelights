@@ -22,7 +22,7 @@ using (var scope = app.Services.CreateScope())
 
     var context = services.GetRequiredService<RecepieDelightContext>();
     context.Database.EnsureCreated();
-    // DbInitializer.Initialize(context);
+    //DbInitializer.Initialize(context);
 }
 app.UseStaticFiles();
 
