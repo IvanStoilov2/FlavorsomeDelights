@@ -19,6 +19,18 @@ body {
   background-color: antiquewhite;
 }
 
-.facebook {
-    text-align: right;
+.footer-info-pages{
+    text-align: center;
+}
+
+.container-rights {
+    text-align: center;
+}
+
+.inf-page {
+    text-decoration: none;
+}
+
+.inf-page:visited{
+     background-color: red;
 }
