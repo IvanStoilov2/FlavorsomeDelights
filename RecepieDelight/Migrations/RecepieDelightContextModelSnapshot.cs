@@ -82,6 +82,9 @@ namespace RecepieDelight.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("CategoriyId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -91,6 +94,8 @@ namespace RecepieDelight.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoriyId");
 
                     b.ToTable("Recepie");
                 });
@@ -140,6 +145,17 @@ namespace RecepieDelight.Migrations
                         .HasForeignKey("RecepiesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("RecepieDelight.Models.Recepie", b =>
+                {
+                    b.HasOne("RecepieDelight.Models.Category", "Categoriy")
+                        .WithMany()
+                        .HasForeignKey("CategoriyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Categoriy");
                 });
 
             modelBuilder.Entity("RecepieShopping_List", b =>
