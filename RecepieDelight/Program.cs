@@ -21,7 +21,10 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
 
     var context = services.GetRequiredService<RecepieDelightContext>();
-    context.Database.EnsureCreated();
+    //context.Database.EnsureCreated();
+
+    // enabling migration scripts
+    context.Database.Migrate();
     //DbInitializer.Initialize(context);
 }
 app.UseStaticFiles();

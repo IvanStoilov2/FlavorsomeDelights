@@ -4,7 +4,7 @@
 
 namespace RecepieDelight.Migrations
 {
-    public partial class NewStuff : Migration
+    public partial class Intial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,20 +36,6 @@ namespace RecepieDelight.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Recepie",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Recepie", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "shopping_Lists",
                 columns: table => new
                 {
@@ -60,6 +46,27 @@ namespace RecepieDelight.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_shopping_Lists", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Recepie",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategoriyId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Recepie", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Recepie_Category_CategoriyId",
+                        column: x => x.CategoriyId,
+                        principalTable: "Category",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -116,6 +123,11 @@ namespace RecepieDelight.Migrations
                 column: "RecepiesId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Recepie_CategoriyId",
+                table: "Recepie",
+                column: "CategoriyId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_RecepieShopping_List_Shopping_ListsId",
                 table: "RecepieShopping_List",
                 column: "Shopping_ListsId");
@@ -123,9 +135,6 @@ namespace RecepieDelight.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Category");
-
             migrationBuilder.DropTable(
                 name: "IngredientRecepie");
 
@@ -140,6 +149,9 @@ namespace RecepieDelight.Migrations
 
             migrationBuilder.DropTable(
                 name: "shopping_Lists");
+
+            migrationBuilder.DropTable(
+                name: "Category");
         }
     }
 }

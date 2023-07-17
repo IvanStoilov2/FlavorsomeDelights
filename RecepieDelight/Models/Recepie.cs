@@ -10,7 +10,6 @@ namespace RecepieDelight.Models
         {
             this.Ingredients = new HashSet<Ingredient>();
             this.Shopping_Lists = new HashSet<Shopping_List>();
-            this.Categories = new HashSet<Category>();
         }
 
         [Key]
@@ -23,6 +22,6 @@ namespace RecepieDelight.Models
         public virtual ICollection<Ingredient> Ingredients { get; set; }
         public virtual ICollection<Shopping_List> Shopping_Lists{ get; set; }
 
-        public virtual ICollection<Category> Categories { get; set; }
+        public virtual Category Categoriy { get; set; }
     }
 }
