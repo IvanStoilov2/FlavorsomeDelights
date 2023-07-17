@@ -4,7 +4,7 @@
 
 namespace RecepieDelight.Migrations
 {
-    public partial class Intial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

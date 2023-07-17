@@ -36,9 +36,9 @@ namespace RecepieDelight.Data
             base.OnModelCreating(modelBuilder);
 
             //SAMPLE OF SEEDING DATA
-            //modelBuilder.Entity<Category>().HasData(new Category { Id = 1, Name = "Category1" });
-            //modelBuilder.Entity<Category>().HasData(new Category { Id = 2, Name = "Category2" });
-            //modelBuilder.Entity<Category>().HasData(new Category { Id = 3, Name = "Category3" });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 1, Name = "Category1" });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 2, Name = "Category2" });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 3, Name = "Category3" });
 
         }
     }
