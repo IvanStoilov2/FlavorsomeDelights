@@ -5,6 +5,10 @@ namespace RecepieDelight.Data
 {
     public class RecepieDelightContext : DbContext
     {
+        public RecepieDelightContext()
+        {
+        }
+
         public RecepieDelightContext(DbContextOptions<RecepieDelightContext> options)
             : base(options) { }
 
