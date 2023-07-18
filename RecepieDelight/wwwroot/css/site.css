@@ -29,15 +29,9 @@ body {
 
 footer {
     background: #DEE3DF;
+    margin-top: 30px;
+    position:relative;
 }
-
-/*
-.text-center {
-    position: center;
-    
-    height: 300px;
-}
-    */
 
 .index-body {
     text-align: left;
@@ -68,5 +62,7 @@ footer {
     font-variation-settings: "wght" 582;
     letter-spacing: 1px;
 }
+
+
 
 
