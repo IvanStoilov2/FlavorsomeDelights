@@ -41,6 +41,34 @@ namespace RecepieDelight.Data
             modelBuilder.Entity<Category>().HasData(new Category { Id = 3, Name = "Dinner" });
             modelBuilder.Entity<Category>().HasData(new Category { Id = 4, Name = "Desserts" });
 
+
+
+            var recepie = new Recepie();
+            recepie.Id = 1;
+            recepie.Title = "Classic Avocado Toast";
+            recepie.Description = "agahweahah";
+            recepie.createdDate = "2022-10-17";
+            recepie.complexity = 1;
+            recepie.preparationTime = "12:30 min";
+            recepie.CategoryId = 1;
+
+            var recepie2 = new Recepie();
+            recepie2.Id = 2;
+            recepie2.Title = "Eggs";
+            recepie2.Description = "agahweahah";
+            recepie2.createdDate = "2022-10-17";
+            recepie2.complexity = 1;
+            recepie2.preparationTime = "12:30 min";
+            recepie2.CategoryId = 2;
+
+
+            modelBuilder.Entity<Recepie>().HasData(recepie);
+            modelBuilder.Entity<Recepie>().HasData(recepie2);
+
+
+
+
+
         }
     }
 }
