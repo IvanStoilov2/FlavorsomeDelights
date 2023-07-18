@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RecepieDelight.Data;
 
@@ -10,9 +11,10 @@ using RecepieDelight.Data;
 namespace RecepieDelight.Migrations
 {
     [DbContext(typeof(RecepieDelightContext))]
-    partial class RecepieDelightContextModelSnapshot : ModelSnapshot
+    [Migration("20230718081208_Seed")]
+    partial class Seed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,16 +136,6 @@ namespace RecepieDelight.Migrations
                             CategoryId = 1,
                             Description = "agahweahah",
                             Title = "Classic Avocado Toast",
-                            complexity = 1,
-                            createdDate = "2022-10-17",
-                            preparationTime = "12:30 min"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 2,
-                            Description = "agahweahah",
-                            Title = "Eggs",
                             complexity = 1,
                             createdDate = "2022-10-17",
                             preparationTime = "12:30 min"

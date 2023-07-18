@@ -11,8 +11,8 @@ using RecepieDelight.Data;
 namespace RecepieDelight.Migrations
 {
     [DbContext(typeof(RecepieDelightContext))]
-    [Migration("20230717104116_Initial")]
-    partial class Initial
+    [Migration("20230718085659_Seed2")]
+    partial class Seed2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,6 +53,23 @@ namespace RecepieDelight.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Category1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Category2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Category3"
+                        });
                 });
 
             modelBuilder.Entity("RecepieDelight.Models.Ingredient", b =>
@@ -84,7 +101,7 @@ namespace RecepieDelight.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("CategoriyId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -95,11 +112,44 @@ namespace RecepieDelight.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("complexity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("createdDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("preparationTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriyId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Recepie");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            Description = "agahweahah",
+                            Title = "Classic Avocado Toast",
+                            complexity = 1,
+                            createdDate = "2022-10-17",
+                            preparationTime = "12:30 min"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 2,
+                            Description = "agahweahah",
+                            Title = "Eggs",
+                            complexity = 1,
+                            createdDate = "2022-10-17",
+                            preparationTime = "12:30 min"
+                        });
                 });
 
             modelBuilder.Entity("RecepieDelight.Models.Shopping_List", b =>
@@ -151,13 +201,13 @@ namespace RecepieDelight.Migrations
 
             modelBuilder.Entity("RecepieDelight.Models.Recepie", b =>
                 {
-                    b.HasOne("RecepieDelight.Models.Category", "Categoriy")
+                    b.HasOne("RecepieDelight.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoriyId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Categoriy");
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("RecepieShopping_List", b =>

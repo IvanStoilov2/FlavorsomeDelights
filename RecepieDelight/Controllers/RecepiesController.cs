@@ -20,19 +20,29 @@ namespace RecepieDelight.Controllers
         }
 
         // GET: Recepies
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? categoryId)
         {
-              return _context.Recepie != null ? 
-                          View(await _context.Recepie.ToListAsync()) :
-                          Problem("Entity set 'RecepieDelightContext.Recepie'  is null.");
+            if (_context.Recepie == null)
+            {
+                return Problem("Entity set 'RecepieDelightContext.Recepie'  is null.");
+            }
+
+            if (categoryId.HasValue)
+            {
+                return View(await _context.Recepie.Where(r => r.CategoryId == categoryId).Include(r => r.Category).ToListAsync());
+            }
+            else
+            {
+                return View(await _context.Recepie.Include(r => r.Category).ToListAsync());
+            }
         }
 
 
         // GET: Recepies/Details/5
         public async Task<IActionResult> GetByTitle(string titleFilter)
         {
-            return _context.Recepie.Where(x=>x.Title.Contains(titleFilter)) != null ?
-                          View("Index",await _context.Recepie.Where(x => x.Title.Contains(titleFilter)).ToListAsync()) :
+            return _context.Recepie.Where(x => x.Title.Contains(titleFilter)) != null ?
+                          View("Index", await _context.Recepie.Where(x => x.Title.Contains(titleFilter)).ToListAsync()) :
                           Problem("Entity set 'RecepieDelightContext.Recepie'  is null.");
         }
 
@@ -166,14 +176,14 @@ namespace RecepieDelight.Controllers
             {
                 _context.Recepie.Remove(recepie);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool RecepieExists(int id)
         {
-          return (_context.Recepie?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Recepie?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

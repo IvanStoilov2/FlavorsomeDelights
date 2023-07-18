@@ -4,7 +4,7 @@
 
 namespace RecepieDelight.Migrations
 {
-    public partial class CategorySeed : Migration
+    public partial class Seed : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,15 +22,15 @@ namespace RecepieDelight.Migrations
                 table: "Category",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 3, "Category3" });
+
+            migrationBuilder.InsertData(
+                table: "Recepie",
+                columns: new[] { "Id", "CategoryId", "Description", "Title", "complexity", "createdDate", "preparationTime" },
+                values: new object[] { 1, 1, "agahweahah", "Classic Avocado Toast", 1, "2022-10-17", "12:30 min" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DeleteData(
-                table: "Category",
-                keyColumn: "Id",
-                keyValue: 1);
-
             migrationBuilder.DeleteData(
                 table: "Category",
                 keyColumn: "Id",
@@ -40,6 +40,16 @@ namespace RecepieDelight.Migrations
                 table: "Category",
                 keyColumn: "Id",
                 keyValue: 3);
+
+            migrationBuilder.DeleteData(
+                table: "Recepie",
+                keyColumn: "Id",
+                keyValue: 1);
+
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 1);
         }
     }
 }

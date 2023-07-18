@@ -4,7 +4,7 @@
 
 namespace RecepieDelight.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Inital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -56,14 +56,17 @@ namespace RecepieDelight.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoriyId = table.Column<int>(type: "int", nullable: false)
+                    createdDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    complexity = table.Column<int>(type: "int", nullable: false),
+                    preparationTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Recepie", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Recepie_Category_CategoriyId",
-                        column: x => x.CategoriyId,
+                        name: "FK_Recepie_Category_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Category",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -123,9 +126,9 @@ namespace RecepieDelight.Migrations
                 column: "RecepiesId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Recepie_CategoriyId",
+                name: "IX_Recepie_CategoryId",
                 table: "Recepie",
-                column: "CategoriyId");
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_RecepieShopping_List_Shopping_ListsId",
