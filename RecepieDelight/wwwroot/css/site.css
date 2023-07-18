@@ -1,34 +1,38 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-html { 
-  position: relative;
-  min-height: 100%;
+html {
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
-
-  background-color: antiquewhite;
+    margin-bottom: 60px;
+    background-color: #DFFCE8;
 }
 
-.footer-info-pages{
+.footer-info-pages {
     text-align: center;
 }
 
 .inf-page {
     text-decoration: none;
     color: black;
-
 }
 
 footer {
-    background: #BAB3B6;
+    background: #DEE3DF;
 }
+
+.text-center {
+    width: 1100px;
+    height: 300px;
+}
+

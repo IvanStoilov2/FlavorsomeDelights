@@ -11,12 +11,17 @@ namespace RecepieDelight.Migrations
             migrationBuilder.InsertData(
                 table: "Category",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { 1, "Category1" });
+                values: new object[] { 1, "Breakfast" });
 
             migrationBuilder.InsertData(
                 table: "Category",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { 2, "Category2" });
+                values: new object[] { 2, "Lunch" });
+
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 3, "Dinner" });
 
             migrationBuilder.InsertData(
                 table: "Category",
