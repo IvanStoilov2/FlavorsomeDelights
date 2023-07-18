@@ -152,6 +152,16 @@ namespace RecepieDelight.Migrations
                             complexity = 1,
                             createdDate = "2022-10-17",
                             preparationTime = "12:30 min"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 1,
+                            Description = "qew",
+                            Title = "bacon",
+                            complexity = 1,
+                            createdDate = "2023-2-17",
+                            preparationTime = "2:30 min"
                         });
                 });
 

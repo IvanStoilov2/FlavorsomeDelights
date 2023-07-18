@@ -11,8 +11,8 @@ using RecepieDelight.Data;
 namespace RecepieDelight.Migrations
 {
     [DbContext(typeof(RecepieDelightContext))]
-    [Migration("20230718085659_Seed2")]
-    partial class Seed2
+    [Migration("20230718104502_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,17 +58,22 @@ namespace RecepieDelight.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Category1"
+                            Name = "Breakfast"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Category2"
+                            Name = "Lunch"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Category3"
+                            Name = "Dinner"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Desserts"
                         });
                 });
 

@@ -61,9 +61,19 @@ namespace RecepieDelight.Data
             recepie2.preparationTime = "12:30 min";
             recepie2.CategoryId = 2;
 
+            var recepie3 = new Recepie();
+            recepie3.Id = 3;
+            recepie3.Title = "bacon";
+            recepie3.Description = "qew";
+            recepie3.createdDate = "2023-2-17";
+            recepie3.complexity = 1;
+            recepie3.preparationTime = "2:30 min";
+            recepie3.CategoryId = 1;
+                   
 
             modelBuilder.Entity<Recepie>().HasData(recepie);
             modelBuilder.Entity<Recepie>().HasData(recepie2);
+            modelBuilder.Entity<Recepie>().HasData(recepie3);
 
 
 

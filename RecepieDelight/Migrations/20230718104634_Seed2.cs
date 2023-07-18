@@ -11,7 +11,7 @@ namespace RecepieDelight.Migrations
             migrationBuilder.InsertData(
                 table: "Recepie",
                 columns: new[] { "Id", "CategoryId", "Description", "Title", "complexity", "createdDate", "preparationTime" },
-                values: new object[] { 2, 2, "agahweahah", "Eggs", 1, "2022-10-17", "12:30 min" });
+                values: new object[] { 3, 1, "qew", "bacon", 1, "2023-2-17", "2:30 min" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -19,7 +19,7 @@ namespace RecepieDelight.Migrations
             migrationBuilder.DeleteData(
                 table: "Recepie",
                 keyColumn: "Id",
-                keyValue: 2);
+                keyValue: 3);
         }
     }
 }
