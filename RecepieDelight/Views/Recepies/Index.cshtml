@@ -13,36 +13,41 @@
     
 </p>
 
-
-<h1 style="color:black;"></h1>
-@foreach (var item in Model)
-{
-    <div class="article-container">
-        <div class="eventsInfo">
-            <img src="~/img/avocado-toast.jpg" width="100" height="100">
-            <h4 class="title">  @Html.DisplayFor(modelItem => item.Title)</h4>
-            <h6 class="complexity">
-                @if (item.complexity == 1)
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="recipes">
+            <div class="recipe-list">
+                @foreach (var item in Model)
                 {
-                    <img src="~/img/complexity=1.png" width="67.6" height="20">
+                    <div class="card">
+                      
+                        <a class="hiperlink-recepie" asp-action="Details" asp-route-id="@item.Id">
+                        <img class="images-list" src="~/img/avocado-toast.jpg" width="100" height="100.">
+                        <div class="info">
+                            <h4 class="title">  @Html.DisplayFor(modelItem => item.Title)</h4>
+                                <h6 class="complexity">
+                                    @if (item.complexity == 1)
+                                    {
+                                        <img src="~/img/complexity=1.png" width="67.6" height="20">
+                                    }
+                                    @if (item.complexity == 2)
+                                    {
+                                        <img src="~/img/complexity=2.png" width="67.6" height="20">
+                                    }
+                                    @if (item.complexity == 3)
+                                    {
+                                        <img src="~/img/complexity=3.png" width="67.6" height="20">
+                                    }
+                                </h6>
+                            <h6 class="preparationTime">  @Html.DisplayFor(modelItem => item.preparationTime)</h6>
+                        </div>
+                        </a>
+                    </div>
                 }
-                @if (item.complexity == 2)
-                {
-                    <img src="~/img/complexity=2.png" width="67.6" height="20">
-                }
-                @if (item.complexity == 3)
-                {
-                    <img src="~/img/complexity=3.png" width="67.6" height="20">
-                }
-            </h6>
-            <h6 class="preparationTime">  @Html.DisplayFor(modelItem => item.preparationTime)</h6>
-
-            <a asp-action="Edit" asp-route-id="@item.Id"><button type="button" class="btn btn-light">Edit</button></a> 
-            <a asp-action="Details" asp-route-id="@item.Id"><button type="button" class="btn btn-light">Details</button></a> 
-            <a asp-action="Delete" asp-route-id="@item.Id"><button type="button" class="btn btn-light">Delete</button></a>
+            </div>
         </div>
     </div>
-}
+</div>
 
 <br />
 <br />
