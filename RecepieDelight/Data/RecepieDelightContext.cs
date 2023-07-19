@@ -223,6 +223,8 @@ namespace RecepieDelight.Data
             recepie20.preparationTime = "15:00 min + freezing time";
             recepie20.CategoryId = 4;
 
+
+
             modelBuilder.Entity<Recepie>().HasData(recepie);
             modelBuilder.Entity<Recepie>().HasData(recepie2);
             modelBuilder.Entity<Recepie>().HasData(recepie3);

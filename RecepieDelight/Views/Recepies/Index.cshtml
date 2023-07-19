@@ -1,11 +1,12 @@
 ﻿@model IEnumerable<RecepieDelight.Models.Recepie>
 
 @{
-    ViewData["Title"] = "Flavorsome Delights";
+    //ViewData["Title"] = "Recipes";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var pageTitle = ViewData["Title"] as string;
 }
+<h1>@pageTitle</h1>
 
-<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>

@@ -31,5 +31,7 @@ namespace RecepieDelight.Models
         public virtual Category Category { get; set; }
 
         public int CategoryId { get; set; }
+
+       
     }
 }

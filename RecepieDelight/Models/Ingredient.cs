@@ -17,5 +17,7 @@ namespace RecepieDelight.Models
 
         public virtual ICollection<Recepie> Recepies { get; set; }
 
+       
+
     }
 }
