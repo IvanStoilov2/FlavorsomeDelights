@@ -19,16 +19,19 @@ namespace RecepieDelight.Models
 
         public string Description { get; set; }
 
+        [Display(Name = "Created Date")]
         public string createdDate { get; set; }
 
+        [Display(Name = "Complexity")]
         public int complexity { get; set; }
 
+        [Display(Name = "Preparation Time")]
         public string preparationTime { get; set; }
 
         public virtual ICollection<Ingredient> Ingredients { get; set; }
         public virtual ICollection<Shopping_List> Shopping_Lists{ get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual Category? Category { get; set; }
 
         public int CategoryId { get; set; }
 
