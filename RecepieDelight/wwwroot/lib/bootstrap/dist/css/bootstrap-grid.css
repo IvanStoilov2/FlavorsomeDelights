@@ -4,7 +4,6 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-.container,
 .container-fluid,
 .container-xxl,
 .container-xl,
@@ -16,6 +15,14 @@
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: 0%;
   margin-left: auto;
+}
+
+.container {
+    width: 100%;
+    padding-right: 0% /*var(--bs-gutter-x, 0.75rem)*/;
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: 0%;
+    margin: 0%
 }
 
 @media (min-width: 576px) {
