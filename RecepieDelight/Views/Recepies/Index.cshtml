@@ -12,25 +12,25 @@
 </p>
 
 
-    <h1 style="color:black;">RECIPES</h1>
-    @foreach (var item in Model)
-    {
-        <div class="article-container">
-            <div class="eventsInfo">
-                <div class="home-image">
-                    <img src="~/img/avocado-toast.jpg" width="100" height="100.">
-                    <h4 class="title">  @Html.DisplayFor(modelItem => item.Title)</h4>
-                    <h6 class="complexity">  @Html.DisplayFor(modelItem => item.complexity)</h6>
-                    <h6 class="preparationTime">  @Html.DisplayFor(modelItem => item.preparationTime)</h6>
-                    <div class="info-buttons">
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </div>
+<h1 style="color:black;">RECIPES</h1>
+@foreach (var item in Model)
+{
+    <div class="article-container">
+        <div class="eventsInfo">
+            <div class="home-image">
+                <img src="~/img/avocado-toast.jpg" width="100" height="100.">
+                <h4 class="title">  @Html.DisplayFor(modelItem => item.Title)</h4>
+                <h6 class="complexity">  @Html.DisplayFor(modelItem => item.complexity)</h6>
+                <h6 class="preparationTime">  @Html.DisplayFor(modelItem => item.preparationTime)</h6>
+                <div class="info-buttons">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </div>
             </div>
         </div>
-    }
+    </div>
+}
 
 <br />
 <br />
