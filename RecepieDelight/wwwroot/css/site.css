@@ -28,7 +28,7 @@ body {
 }
 
 footer {
-    background: #BC642B;
+    background: #ffd79c;
     margin-top: 30px;
     position: relative;
 }
@@ -59,16 +59,25 @@ footer {
     text-align: center;
 }
 
-.h4-style-index:hover {
-    font-variation-settings: "wght" 582;
-    letter-spacing: 1px;
-}
+    .h4-style-index:hover {
+        font-variation-settings: "wght" 582;
+        letter-spacing: 1px;
+    }
 
 
 .article-container {
     background-color: rgba(255, 255, 255, 0.904) 10%;
-    margin: 1em 3em;
+    width: 100%;
+    margin-bottom: 2em;
     padding: 1em;
+    border-radius: 1rem;
+    box-shadow: 2px 10px 1.5em 5px black;
+    color: rgba(245, 234, 234, 0.842);
+    font-size: 18px;
+}
+
+.article-container-photo {
+    width: 100%;
     border-radius: 1rem;
     box-shadow: 2px 10px 1.5em 5px black;
     color: rgba(245, 234, 234, 0.842);
@@ -84,21 +93,52 @@ footer {
 }
   */
 
-    .article-container > div {
-        flex: 0 0 5em;
-        margin: 1em;
-        background-color: red;
-        position: relative;
-        box-shadow: 2px 2px 1.5em 2px black;
-        color: black;
-    }
+.article-container > div {
+    flex: 0 0 5em;
+    margin: 1em;
+    background-color: rgba(173, 173, 173, 1);
+    position: relative;
+    box-shadow: 2px 2px 0.7em 2px black;
+    color: black;
+}
 
-.article-container > div > .info {
-    position: absolute;
-    display: block;
+ .article-container > div > .info {
+     position: absolute;
+     display: block;
+     width: 100%;
+     padding: 0.5rem;
+     bottom: 0;
+     background-color: white;
+     box-shadow: 2px 2px 1.5em 2px black;
+ }
+
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+img.images-list {
     width: 100%;
-    padding: 0.5rem;
-    bottom: 0;
-    background-color: white;
-    box-shadow: 2px 2px 1.5em 2px black;
+    height: 11rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.hiperlink-recepie {
+    text-decoration: none;
+    color: black;
+}
+
+.hiperlink-recepie:hover {
+    color: black;
+}
+
+.hiperlink-recepie:visited {
+    color: black;
+}
+
+.title {
+    text-align: center;
 }
