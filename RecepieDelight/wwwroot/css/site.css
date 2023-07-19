@@ -84,14 +84,14 @@ footer {
 }
   */
 
-    .article-container > div {
-        flex: 0 0 5em;
-        margin: 1em;
-        background-color: red;
-        position: relative;
-        box-shadow: 2px 2px 1.5em 2px black;
-        color: black;
-    }
+.article-container > div {
+    flex: 0 0 5em;
+    margin: 1em;
+    background-color: whitesmoke;
+    position: relative;
+    box-shadow: 2px 2px 1.5em 2px black;
+    color: black;
+}
 
 .article-container > div > .info {
     position: absolute;
