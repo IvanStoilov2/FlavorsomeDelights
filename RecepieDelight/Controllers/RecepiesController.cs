@@ -29,10 +29,21 @@ namespace RecepieDelight.Controllers
 
             if (categoryId.HasValue)
             {
-                return View(await _context.Recepie.Where(r => r.CategoryId == categoryId).Include(r => r.Category).ToListAsync());
+                var recepies = _context.Recepie.Where(r => r.CategoryId == categoryId).Include(r => r.Category).ToList();
+
+                if (recepies.Count == 0)
+                {
+                    return Problem("No Data.");
+                }
+
+                ViewData["Title"] = recepies.First().Category.Name;
+
+                return View(recepies);
             }
             else
             {
+                ViewData["Title"] = "All Recepies";
+             
                 return View(await _context.Recepie.Include(r => r.Category).ToListAsync());
             }
         }
