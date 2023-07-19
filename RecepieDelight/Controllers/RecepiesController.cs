@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.Differencing;
 using Microsoft.EntityFrameworkCore;
 using RecepieDelight.Data;
 using RecepieDelight.Models;
@@ -86,7 +88,7 @@ namespace RecepieDelight.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description")] Recepie recepie)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,createdDate,complexity,preparationTime")] Recepie recepie)
         {
             //recepie.Ingredients = new List<Ingredient>();
             //var ingr = new Ingredient();
@@ -112,11 +114,15 @@ namespace RecepieDelight.Controllers
                 return NotFound();
             }
 
+            ViewData["Categories"] = _context.Category.ToList();
+
             var recepie = await _context.Recepie.FindAsync(id);
             if (recepie == null)
             {
                 return NotFound();
             }
+            //recepie.Ingredients = new List<Ingredient>();
+
             return View(recepie);
         }
 
@@ -125,7 +131,7 @@ namespace RecepieDelight.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description")] Recepie recepie)
+        public async Task<IActionResult> Edit(int id, Recepie recepie)
         {
             if (id != recepie.Id)
             {
@@ -136,6 +142,7 @@ namespace RecepieDelight.Controllers
             {
                 try
                 {
+                   
                     _context.Update(recepie);
                     await _context.SaveChangesAsync();
                 }

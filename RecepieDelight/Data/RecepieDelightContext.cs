@@ -223,6 +223,12 @@ namespace RecepieDelight.Data
             recepie20.preparationTime = "15:00 min + freezing time";
             recepie20.CategoryId = 4;
 
+            //var recepie21 = new Ingredient();
+            //recepie21.Id = 1;
+            //recepie21.Name = "Egg";
+            //recepie21.Filter = "AFAF";
+           
+
 
 
             modelBuilder.Entity<Recepie>().HasData(recepie);
