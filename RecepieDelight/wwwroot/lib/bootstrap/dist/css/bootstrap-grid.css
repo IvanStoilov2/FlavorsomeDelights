@@ -12,9 +12,9 @@
 .container-md,
 .container-sm {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-right: 0%/*var(--bs-gutter-x, 0.75rem)*/;
   padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
+  margin-right: 0%;
   margin-left: auto;
 }
 
