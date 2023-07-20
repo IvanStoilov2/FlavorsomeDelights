@@ -173,3 +173,7 @@ dd{
     margin-left:50px;
 
 }
+
+div input{
+    width:100%;
+}

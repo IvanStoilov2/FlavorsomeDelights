@@ -6,60 +6,68 @@
 }
 
 <div style="text-align:center;">
-<h1>Create</h1>
+    <h1>Create</h1>
 
-<h4>Recepie</h4>
+    <h4>Recepie</h4>
 </div>
 
+<div id="events">
+    <div class="article-container">
+        <div class="eventsInfo">
+            <div class="info">
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="createdDate" class="control-label"></label>
-                <input asp-for="createdDate" class="form-control" />
-                <span asp-validation-for="createdDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="complexity" class="control-label"></label>
-                <input asp-for="complexity" class="form-control" />
-                <span asp-validation-for="complexity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="preparationTime" class="control-label"></label>
-                <input asp-for="preparationTime" class="form-control" />
-                <span asp-validation-for="preparationTime" class="text-danger"></span>
-            </div>
-            <div class="form-group"><h6>
-                @Html.DropDownListFor(model => model.CategoryId, new SelectList((List<Category>)ViewData["Categories"], "Id", "Name"))
-                </h6>
-            </div>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" style="align-items:center" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="createdDate" class="control-label"></label>
+                        <input asp-for="createdDate" class="form-control" />
+                        <span asp-validation-for="createdDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="complexity" class="control-label"></label>
+                        <input asp-for="complexity" class="form-control" />
+                        <span asp-validation-for="complexity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="preparationTime" class="control-label"></label>
+                        <input asp-for="preparationTime" class="form-control" />
+                        <span asp-validation-for="preparationTime" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <h6>
+                            @Html.DropDownListFor(model => model.CategoryId, new SelectList((List<Category>)ViewData["Categories"], "Id", "Name"))
+                        </h6>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+
+                </form>
+                <div style="margin-top:20px;">
+                    <button style="width:100%; height:40px; " class="btn btn-primary">
+                        <a style="color:white; text-decoration: none;" asp-action="Index">Back to List</a>
+                    </button>
+                </div>
             </div>
-        </form>
+        </div>
+
+
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
     }
-}
