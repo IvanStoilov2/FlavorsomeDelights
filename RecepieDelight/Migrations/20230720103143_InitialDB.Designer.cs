@@ -11,7 +11,7 @@ using RecepieDelight.Data;
 namespace RecepieDelight.Migrations
 {
     [DbContext(typeof(RecepieDelightContext))]
-    [Migration("20230720102845_InitialDB")]
+    [Migration("20230720103143_InitialDB")]
     partial class InitialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
