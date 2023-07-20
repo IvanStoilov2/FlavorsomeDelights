@@ -7,7 +7,6 @@
 
 <h1>Edit</h1>
 
-<h4>Recepie</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -43,18 +42,36 @@
                 <h6 class="preparationTime">  @Html.DropDownListFor(n => n.CategoryId, new SelectList((List<Category>)ViewData["Categories"], "Id", "Name"))</h6>
             </div>
 
-            
+
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-outline-success" />
+                @if (Model.CategoryId == 1)
+                {
+                    <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=1">Back to List</a>
+                }
+                @if (Model.CategoryId == 2)
+                {
+                    <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=2">Back to List</a>
+                }
+                @if (Model.CategoryId == 3)
+                {
+                    <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=3">Back to List</a>
+                }
+                @if (Model.CategoryId == 4)
+                {
+                    <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=4">Back to List</a>
+                }
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

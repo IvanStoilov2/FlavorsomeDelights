@@ -1,0 +1,13 @@
+﻿body {
+    padding: 0px !important;
+    margin-left: 0px !important;
+    
+}
+
+
+
+#img {
+    object-fit: fill;
+    width: 400px;
+    height: 400px;
+}
