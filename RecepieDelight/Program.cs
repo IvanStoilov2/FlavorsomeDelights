@@ -24,7 +24,7 @@ using (var scope = app.Services.CreateScope())
     //context.Database.EnsureCreated();
 
     // enabling migration scripts
-    //context.Database.Migrate();
+    context.Database.Migrate();
     //DbInitializer.Initialize(context);
 }
 app.UseStaticFiles();
