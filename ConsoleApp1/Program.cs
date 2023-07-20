@@ -8,7 +8,7 @@
 
 
 //Function to get a random but always same element for a given day from an array 
-var recepiesCount = 122;
+var recepiesCount = 23;
 
 for (int i = 0; i < 5; i++)
 {

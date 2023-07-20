@@ -16,6 +16,49 @@ namespace RecepieDelight.Controllers
     {
         private readonly RecepieDelightContext _context;
 
+        public async Task<Recepie> GetDailyRecepieFromRandomCategory()
+        {
+            var random = new Random();
+
+            // Get all categories
+            var categories = await _context.Category.ToListAsync();
+
+            if (!categories.Any())
+            {
+                return null;
+            }
+
+            // Choose a random category
+            var randomCategory = categories[random.Next(categories.Count)];
+
+            // Get all recepies from the chosen category
+            var recepiesFromCategory = await _context.Recepie.Where(r => r.CategoryId == randomCategory.Id).ToListAsync();
+
+            if (!recepiesFromCategory.Any())
+            {
+                return null;
+            }
+
+            // Choose a random recepie from the category
+            var randomRecepie = recepiesFromCategory[random.Next(recepiesFromCategory.Count)];
+
+            return randomRecepie;
+        }
+
+        public async Task<IActionResult> RecepieOfTheDay()
+        {
+            var recepie = await GetDailyRecepieFromRandomCategory();
+            if (recepie == null)
+            {
+                // Handle the case when there is no recepie
+                return View("NoRecepie"); // Change to an appropriate view
+            }
+            return View(recepie); // Change to an appropriate view
+        }
+
+
+
+
         public RecepiesController(RecepieDelightContext context)
         {
             _context = context;
@@ -90,10 +133,14 @@ namespace RecepieDelight.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Recepie recepie)
         {
-            _context.Add(recepie);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-
+            if (recepie != null && recepie.Title != null && recepie.createdDate != null && recepie.createdDate != null)
+            {
+                _context.Add(recepie);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            
+            else return Problem(nameof(Index));
             ViewData["Categories"] = _context.Category.ToList();
             return View(recepie);
         }
