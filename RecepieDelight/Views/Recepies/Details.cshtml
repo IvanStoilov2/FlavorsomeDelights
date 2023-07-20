@@ -51,7 +51,7 @@
     </dl>
 </div>
 <div>
-        <a button type="button" class="btn btn-outline-success"  asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> 
+        <a button type="button" class="btn btn-outline-success" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> 
         @if (Model.CategoryId == 1)
         {
             <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=1">Back to List</a>
@@ -68,6 +68,7 @@
         {
             <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=4">Back to List</a>
         }
+        <a button type="button" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@Model?.Id">Delete</a>
 
 </div>
 </body>
