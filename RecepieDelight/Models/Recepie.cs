@@ -19,7 +19,7 @@ namespace RecepieDelight.Models
 
         public string Description { get; set; }
 
-        [Display(Name = "Created Date")]
+        [Display(Name = "Date Of Creation")]
         public string createdDate { get; set; }
 
         [Display(Name = "Complexity")]
