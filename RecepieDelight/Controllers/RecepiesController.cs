@@ -45,7 +45,7 @@ namespace RecepieDelight.Controllers
             else
             {
                 ViewData["Title"] = "All Recepies";
-             
+
                 return View(await _context.Recepie.Include(r => r.Category).ToListAsync());
             }
         }
@@ -80,29 +80,21 @@ namespace RecepieDelight.Controllers
         // GET: Recepies/Create
         public IActionResult Create()
         {
+            ViewData["Categories"] = _context.Category.ToList();
             return View();
         }
 
         // POST: Recepies/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,createdDate,complexity,preparationTime")] Recepie recepie)
+        public async Task<IActionResult> Create(Recepie recepie)
         {
-            //recepie.Ingredients = new List<Ingredient>();
-            //var ingr = new Ingredient();
-            //ingr.Name = "ngr2";
-            //ingr.Filter = "asd";
-            //recepie.Ingredients.Add(ingr);
+            _context.Add(recepie);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
 
-
-            if (ModelState.IsValid)
-            {
-                _context.Add(recepie);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+            ViewData["Categories"] = _context.Category.ToList();
             return View(recepie);
         }
 
@@ -142,7 +134,7 @@ namespace RecepieDelight.Controllers
             {
                 try
                 {
-                   
+
                     _context.Update(recepie);
                     await _context.SaveChangesAsync();
                 }

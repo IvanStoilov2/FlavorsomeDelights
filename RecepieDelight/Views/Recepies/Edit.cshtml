@@ -43,7 +43,7 @@
                 <h6 class="preparationTime">  @Html.DropDownListFor(n => n.CategoryId, new SelectList((List<Category>)ViewData["Categories"], "Id", "Name"))</h6>
             </div>
 
-            
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -56,5 +56,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
