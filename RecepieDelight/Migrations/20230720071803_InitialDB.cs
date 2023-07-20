@@ -155,7 +155,10 @@ namespace RecepieDelight.Migrations
                     { 17, 4, "A warm and fruity dessert made with fresh berries, topped with a sweet and buttery crumble.", "Berry Crumble", 1, "2020-08-08", "40:00 min" },
                     { 18, 4, "An elegant Italian dessert made with layers of espresso-soaked ladyfingers and creamy mascarpone cheese.", "Tiramisu", 2, "2020-02-05", "30:00 min + chilling time" },
                     { 19, 4, " A classic American pie with a flaky crust and a sweet apple filling, spiced with cinnamon and nutmeg.", "Apple Pie", 3, "2019-12-29", "90:00 min" },
-                    { 20, 4, "A refreshing and dairy-free frozen treat made with ripe mangoes, sugar, and a splash of lime juice.", "Mango Sorbet", 1, "2020-01-25", "15:00 min + freezing time" }
+                    { 20, 4, "A refreshing and dairy-free frozen treat made with ripe mangoes, sugar, and a splash of lime juice.", "Mango Sorbet", 1, "2020-01-25", "15:00 min + freezing time" },
+                    { 21, 1, "Fluffy scrambled eggs served with creamy avocado spread on crispy toast.", "Scrambled Eggs with Avocado Toast", 1, "2020-02-05", "10:00 min" },
+                    { 22, 1, "Shkembe soup is a traditional Bulgarian dish made with tripe (sheep or cow stomach) and is known for its unique flavors and hearty nature.", "Traditional Bulgarian Soup - Shkembe", 3, "2020-04-23", "120:00 min" },
+                    { 23, 1, "A flavorful and nutritious omelette filled with sautéed spinach and tangy feta cheese.", "Omelette with Spinach and Feta Cheese", 2, "2020-11-28", "13:00 min" }
                 });
 
             migrationBuilder.CreateIndex(
