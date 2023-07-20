@@ -142,3 +142,12 @@ img.images-list {
 .title {
     text-align: center;
 }
+.complexity {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+    .complexity img {
+        margin-right: auto; /* Adjust the spacing between complexity image and preparationTime image */
+    }
