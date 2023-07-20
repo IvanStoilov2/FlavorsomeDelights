@@ -52,6 +52,22 @@
 </div>
 <div>
         <a button type="button" class="btn btn-outline-success"  asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> 
-        <a button type="button" class="btn btn-outline-success"  asp-action="Index">Back to List</a>
+        @if (Model.CategoryId == 1)
+        {
+            <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=1">Back to List</a>
+        }
+        @if (Model.CategoryId == 2)
+        {
+            <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=2">Back to List</a>
+        }
+        @if (Model.CategoryId == 3)
+        {
+            <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=3">Back to List</a>
+        }
+        @if (Model.CategoryId == 4)
+        {
+            <a button type="button" class="btn btn-outline-success" href="/Recepies/Index?CategoryId=4">Back to List</a>
+        }
+
 </div>
 </body>
