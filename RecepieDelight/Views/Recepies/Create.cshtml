@@ -51,9 +51,7 @@
                 <input type="submit" value="Create" class="btn btn-outline-success" />
                 <a button type="button" class="btn btn-outline-success" asp-action="Index">Back to List</a>
             </div>
-            <div class="form-group">
-                <h6 class="preparationTime">  @Html.DropDownListFor(n => n.CategoryId, new SelectList((List<Category>)ViewData["Categories"], "Id", "Name"))</h6>
-            </div>
+            
         </form>
     </div>
 </div>
