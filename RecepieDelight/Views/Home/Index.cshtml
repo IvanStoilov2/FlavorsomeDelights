@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Flavorsome Delights";
+
 }
 
 <div class="article-container-photo">
@@ -14,5 +15,13 @@
 <br />
 <br />
 <br />
+
+@model RecepieDelight.Models.Recepie
+
+<h2>@Model.Title</h2>
+
+<p>Category: @Model.Category.Name</p>
+
+<p>@Model.Description</p>
 
 
