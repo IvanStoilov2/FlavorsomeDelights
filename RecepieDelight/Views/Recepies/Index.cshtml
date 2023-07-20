@@ -19,8 +19,7 @@
             <div class="recipe-list">
                 @foreach (var item in Model)
                 {
-                    <div class="card">
-
+                    <div class="card" style="max-width:400px; max-height:300px; min-width:400px; min-height:300px;">
                         <a class="hiperlink-recepie" asp-action="Details" asp-route-id="@item.Id">
                             @if (item.Id == 1)
                             {
@@ -61,7 +60,8 @@
                             @if (item.Id == 10)
                             {
                                 <img class="images-list" src="~/img/10.jpg" width="100" height="100.">
-                            }  @if (item.Id == 11)
+                            }  
+                            @if (item.Id == 11)
                             {
                                 <img class="images-list" src="~/img/11.jpg" width="100" height="100.">
                             }
