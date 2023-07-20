@@ -148,6 +148,7 @@ img.images-list {
     margin-right: auto;
 }
 
-    .complexity img {
-        margin-right: auto; /* Adjust the spacing between complexity image and preparationTime image */
-    }
+.complexity img {
+    margin-right: auto; /* Adjust the spacing between complexity image and preparationTime image */
+}
+
