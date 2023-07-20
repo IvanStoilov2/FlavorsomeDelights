@@ -223,11 +223,38 @@ namespace RecepieDelight.Data
             recepie20.preparationTime = "15:00 min + freezing time";
             recepie20.CategoryId = 4;
 
+            var recepie21 = new Recepie();
+            recepie21.Id = 21;
+            recepie21.Title = "Scrambled Eggs with Avocado Toast";
+            recepie21.Description = "Fluffy scrambled eggs served with creamy avocado spread on crispy toast.";
+            recepie21.createdDate = "2020-02-05";
+            recepie21.complexity = 1;
+            recepie21.preparationTime = "10:00 min";
+            recepie21.CategoryId = 1;
+            
+            var recepie22 = new Recepie();
+            recepie22.Id = 22;
+            recepie22.Title = "Traditional Bulgarian Soup - Shkembe";
+            recepie22.Description = "Shkembe soup is a traditional Bulgarian dish made with tripe (sheep or cow stomach) and is known for its unique flavors and hearty nature.";
+            recepie22.createdDate = "2020-04-23";
+            recepie22.complexity = 3;
+            recepie22.preparationTime = "120:00 min";
+            recepie22.CategoryId = 1;
+           
+            var recepie23 = new Recepie();
+            recepie23.Id = 23;
+            recepie23.Title = "Omelette with Spinach and Feta Cheese";
+            recepie23.Description = "A flavorful and nutritious omelette filled with sautéed spinach and tangy feta cheese.";
+            recepie23.createdDate = "2020-11-28";
+            recepie23.complexity = 2;
+            recepie23.preparationTime = "13:00 min";
+            recepie23.CategoryId = 1;
+
             //var recepie21 = new Ingredient();
             //recepie21.Id = 1;
             //recepie21.Name = "Egg";
             //recepie21.Filter = "AFAF";
-           
+
 
 
 
@@ -254,6 +281,10 @@ namespace RecepieDelight.Data
             modelBuilder.Entity<Recepie>().HasData(recepie18);
             modelBuilder.Entity<Recepie>().HasData(recepie19);
             modelBuilder.Entity<Recepie>().HasData(recepie20);
+
+            modelBuilder.Entity<Recepie>().HasData(recepie21); 
+            modelBuilder.Entity<Recepie>().HasData(recepie22); 
+            modelBuilder.Entity<Recepie>().HasData(recepie23);
         }
     }
 }

@@ -332,6 +332,36 @@ namespace RecepieDelight.Migrations
                             complexity = 1,
                             createdDate = "2020-01-25",
                             preparationTime = "15:00 min + freezing time"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CategoryId = 1,
+                            Description = "Fluffy scrambled eggs served with creamy avocado spread on crispy toast.",
+                            Title = "Scrambled Eggs with Avocado Toast",
+                            complexity = 1,
+                            createdDate = "2020-02-05",
+                            preparationTime = "10:00 min"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CategoryId = 1,
+                            Description = "Shkembe soup is a traditional Bulgarian dish made with tripe (sheep or cow stomach) and is known for its unique flavors and hearty nature.",
+                            Title = "Traditional Bulgarian Soup - Shkembe",
+                            complexity = 3,
+                            createdDate = "2020-04-23",
+                            preparationTime = "120:00 min"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CategoryId = 1,
+                            Description = "A flavorful and nutritious omelette filled with sautéed spinach and tangy feta cheese.",
+                            Title = "Omelette with Spinach and Feta Cheese",
+                            complexity = 2,
+                            createdDate = "2020-11-28",
+                            preparationTime = "13:00 min"
                         });
                 });
 
