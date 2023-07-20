@@ -90,12 +90,13 @@ namespace RecepieDelight.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Recepie recepie)
         {
-            if (recepie != null && recepie.Title != null && recepie.createdDate != null && recepie.createdDate != null))
+            if (recepie != null && recepie.Title != null && recepie.createdDate != null && recepie.createdDate != null)
             {
                 _context.Add(recepie);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            
             else return Problem(nameof(Index));
             ViewData["Categories"] = _context.Category.ToList();
             return View(recepie);
