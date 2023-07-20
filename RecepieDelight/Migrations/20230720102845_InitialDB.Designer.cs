@@ -11,11 +11,7 @@ using RecepieDelight.Data;
 namespace RecepieDelight.Migrations
 {
     [DbContext(typeof(RecepieDelightContext))]
-<<<<<<<< HEAD:RecepieDelight/Migrations/20230720074406_InitialDB.Designer.cs
-    [Migration("20230720074406_InitialDB")]
-========
-    [Migration("20230720075727_InitialDB")]
->>>>>>>> 3f876b8c4874ac46abf5ba4491de2b564fbc97cb:RecepieDelight/Migrations/20230720075727_InitialDB.Designer.cs
+    [Migration("20230720102845_InitialDB")]
     partial class InitialDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
